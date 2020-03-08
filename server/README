@@ -1,0 +1,17 @@
+Some of the libraries need to be installed in the python setup or python virtual env.
+
+Using a mac? You can use the virtual env
+. venv/bin/activate 
+
+Install dependencies in requirements.txt
+pip install -r requirements.txt 
+
+Webhook from one terminal
+Assuming Stripe cli is installed and logged in - execute
+stripe listen --forward-to http://localhost:4242/stripe-response 
+This will generate a code "whsec.." 
+Replace this in the getPayment.py file line 15 (endpoint_secret)
+
+python3 -m flask run --port 4242
+
+
